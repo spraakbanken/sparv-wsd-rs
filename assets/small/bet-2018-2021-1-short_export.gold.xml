@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='utf-8'?>
+<file>
+  <dokument dok_id="H601AU1" dokument_url_html="http://data.riksdagen.se/dokument/H601AU1" dokument_url_text="http://data.riksdagen.se/dokument/H601AU1/text" dokumentstatus_url_xml="http://data.riksdagen.se/dokumentstatus/H601AU1">
+    <text beteckning="AU1" datatyp="huvuddokument" date="2018-12-17 00:00:00" dokumentnamn="Betänkande" hangar_id="5008634" nummer="1" organ="AU" publicerad="2018-11-08 09:49:12" rm="2018/19" slutnummer="0" status="Webbpublicering" subtyp="bet" systemdatum="2019-01-28 15:14:38" title="Utgiftsområde 13 Jämställdhet och nyanlända invandrares etablering" typ="bet">
+      <sentence>
+        <p>
+          <token sense_rs="|" sense="|">Arbetsmarknadsutskottet</token>
+          <token sense_rs="|" sense="|">s</token>
+          <token sense_rs="|betänkande..1:-1.000|" sense="|betänkande..1:-1.000|">betänkande</token>
+        </p>
+        <p>
+          <token sense_rs="|" sense="|">2018</token>
+          <token sense_rs="|" sense="|">/</token>
+          <token sense_rs="|" sense="|">19</token>
+          <token sense_rs="|" sense="|">:</token>
+          <token sense_rs="|" sense="|">AU1</token>
+        </p>
+        <p>
+          <token sense_rs="|" sense="|">Utgiftsområde</token>
+          <token sense_rs="|" sense="|">13</token>
+          <token sense_rs="|jämställdhet..1:-1.000|" sense="|jämställdhet..1:-1.000|">Jämställdhet</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|nyanländ..1:-1.000|" sense="|nyanländ..1:-1.000|">nyanlända</token>
+          <token sense_rs="|invandrare..1:-1.000|" sense="|invandrare..1:-1.000|">invandrares</token>
+          <token sense_rs="|etablering..1:-1.000|" sense="|etablering..1:-1.000|">etablering</token>
+        </p>
+        <p>
+          <token sense_rs="|sammanfattning..1:-1.000|" sense="|sammanfattning..1:-1.000|">Sammanfattning</token>
+        </p>
+        <p sparv.overlap="6-1">
+          <token sense_rs="|utskott..2:0.983|utskott..3:0.016|utskott..1:0.001|" sense="|utskott..2:0.983|utskott..3:0.016|utskott..1:0.001|">Utskottet</token>
+          <token sense_rs="|föreslå..1:-1.000|" sense="|föreslå..1:-1.000|">föreslår</token>
+          <token sense_rs="|att..1:-1.000|" sense="|att..1:-1.000|">att</token>
+          <token sense_rs="|riksdag..1:-1.000|" sense="|riksdag..1:-1.000|">riksdagen</token>
+          <token sense_rs="|anvisa..1:0.985|anvisa..2:0.015|" sense="|anvisa..1:0.985|anvisa..2:0.015|">anvisar</token>
+          <token sense_rs="|anslag..1:0.999|anslag..3:0.000|anslag..2:0.000|" sense="|anslag..1:0.999|anslag..3:0.000|anslag..2:0.000|">anslag</token>
+          <token sense_rs="|den..1:-1.000|en..2:-1.000|" sense="|den..1:-1.000|en..2:-1.000|">en</token>
+          <token sense_rs="|för..1:-1.000|för..5:-1.000|för..6:-1.000|för..7:-1.000|för..9:-1.000|" sense="|för..1:-1.000|för..5:-1.000|för..6:-1.000|för..7:-1.000|för..9:-1.000|">för</token>
+          <token sense_rs="|" sense="|">2019</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|bemyndiga..1:-1.000|" sense="|bemyndiga..1:-1.000|">bemyndigar</token>
+          <token sense_rs="|regering..1:-1.000|" sense="|regering..1:-1.000|">regeringen</token>
+          <token sense_rs="|att..1:-1.000|" sense="|att..1:-1.000|">att</token>
+          <token sense_rs="|ingå..1:0.950|ingå..2:0.050|" sense="|ingå..1:0.950|ingå..2:0.050|">ingå</token>
+          <token sense_rs="|ekonomisk..1:0.976|ekonomisk..3:0.020|ekonomisk..2:0.003|" sense="|ekonomisk..1:0.976|ekonomisk..3:0.020|ekonomisk..2:0.003|">ekonomiska</token>
+          <token sense_rs="|åtagande..1:-1.000|" sense="|åtagande..1:-1.000|">åtaganden</token>
+          <token sense_rs="|inom..1:-1.000|" sense="|inom..1:-1.000|">inom</token>
+          <token sense_rs="|" sense="|">utgiftsområde</token>
+          <token sense_rs="|" sense="|">1</token>
+          <token sense_rs="|" sense="|">3</token>
+          <token sense_rs="|jämställdhet..1:-1.000|" sense="|jämställdhet..1:-1.000|">Jämställdhet</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|nyanländ..1:-1.000|" sense="|nyanländ..1:-1.000|">nyanlända</token>
+          <token sense_rs="|invandrare..1:-1.000|" sense="|invandrare..1:-1.000|">invandrares</token>
+          <token sense_rs="|etablering..1:-1.000|" sense="|etablering..1:-1.000|">etablering</token>
+          <token sense_rs="|i..2:-1.000|i_enlighet_med..1:-1.000|" sense="|i..2:-1.000|i_enlighet_med..1:-1.000|">i</token>
+          <token sense_rs="|i_enlighet_med..1:42:-1.000|" sense="|i_enlighet_med..1:42:-1.000|">enlighet</token>
+          <token sense_rs="|i_enlighet_med..1:42:-1.000|med..1:-1.000|med..2:-1.000|" sense="|i_enlighet_med..1:42:-1.000|med..1:-1.000|med..2:-1.000|">med</token>
+          <token sense_rs="|den..1:-1.000|en..2:-1.000|" sense="|den..1:-1.000|en..2:-1.000|">ett</token>
+          <token sense_rs="|förslag..1:1.000|förslag..2:0.000|" sense="|förslag..1:1.000|förslag..2:0.000|">förslag</token>
+          <token sense_rs="|" sense="|">som</token>
+          <token sense_rs="|lägga..1:0.867|lägga..2:0.128|lägga..3:0.005|lägga_fram..1:-1.000|" sense="|lägga..1:0.867|lägga..2:0.128|lägga..3:0.005|lägga_fram..1:-1.000|">lagts</token>
+          <token sense_rs="|fram..2:0.902|fram..1:0.066|fram..3:0.032|lägga_fram..1:48:-1.000|" sense="|fram..2:0.902|fram..1:0.066|fram..3:0.032|lägga_fram..1:48:-1.000|">fram</token>
+          <token sense_rs="|gemensam..1:-1.000|" sense="|gemensam..1:-1.000|">gemensamt</token>
+          <token sense_rs="|av..1:-1.000|" sense="|av..1:-1.000|">av</token>
+          <token sense_rs="|moderat..2:-1.000|" sense="|moderat..2:-1.000|">Moderaterna</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|kristdemokrat..1:-1.000|" sense="|kristdemokrat..1:-1.000|">Kristdemokraterna</token>
+          <token sense_rs="|" sense="|">.</token>
+        </p>
+      </sentence>
+      <p sparv.overlap="6-1">
+        <sentence>
+          <token sense_rs="|den..1:-1.000|en..2:-1.000|" sense="|den..1:-1.000|en..2:-1.000|">De</token>
+          <token sense_rs="|föreslå..1:-1.000|" sense="|föreslå..1:-1.000|">föreslagna</token>
+          <token sense_rs="|anslag..1:0.999|anslag..3:0.001|anslag..2:0.001|" sense="|anslag..1:0.999|anslag..3:0.001|anslag..2:0.001|">anslagen</token>
+          <token sense_rs="|uppgå..1:0.998|uppgå..2:0.002|" sense="|uppgå..1:0.998|uppgå..2:0.002|">uppgår</token>
+          <token sense_rs="|till..1:-1.000|" sense="|till..1:-1.000|">till</token>
+          <token sense_rs="|sammanlagd..1:-1.000|" sense="|sammanlagd..1:-1.000|">sammanlagt</token>
+          <token sense_rs="|cirka..1:-1.000|" sense="|cirka..1:-1.000|">ca</token>
+          <token sense_rs="|" sense="|">18</token>
+          <token sense_rs="|miljard..1:-1.000|" sense="|miljard..1:-1.000|">miljarder</token>
+          <token sense_rs="|krona..1:0.999|krona..3:0.001|krona..2:0.001|" sense="|krona..1:0.999|krona..3:0.001|krona..2:0.001|">kronor</token>
+          <token sense_rs="|för..1:-1.000|för..5:-1.000|för..6:-1.000|för..7:-1.000|för..9:-1.000|" sense="|för..1:-1.000|för..5:-1.000|för..6:-1.000|för..7:-1.000|för..9:-1.000|">för</token>
+          <token sense_rs="|" sense="|">2019</token>
+          <token sense_rs="|" sense="|">.</token>
+        </sentence>
+        <sentence>
+          <token sense_rs="|utskott..2:0.755|utskott..3:0.182|utskott..1:0.063|" sense="|utskott..2:0.755|utskott..3:0.182|utskott..1:0.063|">Utskottets</token>
+          <token sense_rs="|förslag..1:1.000|förslag..2:0.000|" sense="|förslag..1:1.000|förslag..2:0.000|">förslag</token>
+          <token sense_rs="|avvika..1:0.591|avvika..2:0.409|" sense="|avvika..1:0.591|avvika..2:0.409|">avviker</token>
+          <token sense_rs="|från..1:-1.000|" sense="|från..1:-1.000|">från</token>
+          <token sense_rs="|budgetproposition..1:-1.000|" sense="|budgetproposition..1:-1.000|">budgetpropositionen</token>
+          <token sense_rs="|när..1:0.994|nära..1:0.006|" sense="|när..1:0.994|nära..1:0.006|">när</token>
+          <token sense_rs="|den..2:-1.000|" sense="|den..2:-1.000|">det</token>
+          <token sense_rs="|gälla..1:0.915|gälla..2:0.078|gälla..4:0.004|gälla..3:0.003|" sense="|gälla..1:0.915|gälla..2:0.078|gälla..4:0.004|gälla..3:0.003|">gäller</token>
+          <token sense_rs="|anslag..1:0.990|anslag..3:0.006|anslag..2:0.004|" sense="|anslag..1:0.990|anslag..3:0.006|anslag..2:0.004|">anslagen</token>
+          <token sense_rs="|" sense="|">Etableringsåtgärder</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|" sense="|">Kommunersättningar</token>
+          <token sense_rs="|vid..1:-1.000|" sense="|vid..1:-1.000|">vid</token>
+          <token sense_rs="|flyktingmottagande..1:-1.000|" sense="|flyktingmottagande..1:-1.000|">flyktingmottagande</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|" sense="|">Hemutrustningslån</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|särskilja..1:0.557|särskild..1:0.443|" sense="|särskilja..1:0.557|särskild..1:0.443|">Särskilda</token>
+          <token sense_rs="|" sense="|">jämställdhetsåtgärder</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|jämställdhet..1:-1.000|" sense="|jämställdhet..1:-1.000|">Jämställdhets</token>
+          <token sense_rs="|myndighet..1:0.996|myndighet..3:0.002|myndighet..2:0.002|" sense="|myndighet..1:0.996|myndighet..3:0.002|myndighet..2:0.002|">myndigheten</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|åtgärd..1:-1.000|" sense="|åtgärd..1:-1.000|">Åtgärder</token>
+          <token sense_rs="|mot..1:-1.000|mot..2:-1.000|" sense="|mot..1:-1.000|mot..2:-1.000|">mot</token>
+          <token sense_rs="|segregation..1:-1.000|" sense="|segregation..1:-1.000|">segregation</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|delegation..2:0.537|delegation..1:0.463|" sense="|delegation..2:0.537|delegation..1:0.463|">Delegationen</token>
+          <token sense_rs="|mot..1:-1.000|mot..2:-1.000|" sense="|mot..1:-1.000|mot..2:-1.000|">mot</token>
+          <token sense_rs="|segregation..1:-1.000|" sense="|segregation..1:-1.000|">segregation</token>
+          <token sense_rs="|samt..1:-1.000|" sense="|samt..1:-1.000|">samt</token>
+          <token sense_rs="|när..1:0.995|nära..1:0.005|" sense="|när..1:0.995|nära..1:0.005|">när</token>
+          <token sense_rs="|den..2:-1.000|" sense="|den..2:-1.000|">det</token>
+          <token sense_rs="|gälla..1:0.930|gälla..2:0.066|gälla..4:0.002|gälla..3:0.002|" sense="|gälla..1:0.930|gälla..2:0.066|gälla..4:0.002|gälla..3:0.002|">gäller</token>
+          <token sense_rs="|den..1:-1.000|en..2:-1.000|" sense="|den..1:-1.000|en..2:-1.000|">ett</token>
+          <token sense_rs="|beställning..1:-1.000|" sense="|beställning..1:-1.000|">beställnings</token>
+          <token sense_rs="|bemyndigande..1:-1.000|" sense="|bemyndigande..1:-1.000|">bemyndigande</token>
+          <token sense_rs="|" sense="|">.</token>
+        </sentence>
+        <sentence>
+          <token sense_rs="|i..2:-1.000|i_fråga..1:-1.000|i_fråga_om..1:-1.000|" sense="|i..2:-1.000|i_fråga..1:-1.000|i_fråga_om..1:-1.000|">I</token>
+          <token sense_rs="|fråga..2:0.910|fråga..3:0.090|i_fråga..1:1:-1.000|i_fråga_om..1:1:-1.000|" sense="|fråga..2:0.910|fråga..3:0.090|i_fråga..1:1:-1.000|i_fråga_om..1:1:-1.000|">fråga</token>
+          <token sense_rs="|i_fråga_om..1:1:-1.000|om..1:-1.000|om..5:-1.000|" sense="|i_fråga_om..1:1:-1.000|om..1:-1.000|om..5:-1.000|">om</token>
+          <token sense_rs="|övrig..1:-1.000|" sense="|övrig..1:-1.000|">övriga</token>
+          <token sense_rs="|anslag..1:0.992|anslag..3:0.004|anslag..2:0.004|" sense="|anslag..1:0.993|anslag..2:0.004|anslag..3:0.004|">anslag</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|beställning..1:-1.000|" sense="|beställning..1:-1.000|">beställnings</token>
+          <token sense_rs="|bemyndigande..1:-1.000|" sense="|bemyndigande..1:-1.000|">bemyndiganden</token>
+          <token sense_rs="|inom..1:-1.000|" sense="|inom..1:-1.000|">inom</token>
+          <token sense_rs="|" sense="|">utgiftsområdet</token>
+          <token sense_rs="|finna..1:0.547|finnas..1:0.447|finna..2:0.006|" sense="|finna..1:0.547|finnas..1:0.447|finna..2:0.006|">finns</token>
+          <token sense_rs="|den..2:-1.000|" sense="|den..2:-1.000|">det</token>
+          <token sense_rs="|ingen..1:-1.000|" sense="|ingen..1:-1.000|">inga</token>
+          <token sense_rs="|avvikelse..1:0.977|avvikelse..2:0.023|" sense="|avvikelse..1:0.978|avvikelse..2:0.022|">avvikelser</token>
+          <token sense_rs="|mellan..1:-1.000|" sense="|mellan..1:-1.000|">mellan</token>
+          <token sense_rs="|utskott..2:0.843|utskott..3:0.101|utskott..1:0.056|" sense="|utskott..2:0.835|utskott..3:0.109|utskott..1:0.056|">utskottets</token>
+          <token sense_rs="|förslag..1:1.000|förslag..2:0.000|" sense="|förslag..1:1.000|förslag..2:0.000|">förslag</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|förslag..1:1.000|förslag..2:0.000|" sense="|förslag..1:1.000|förslag..2:0.000|">förslaget</token>
+          <token sense_rs="|i..2:-1.000|" sense="|i..2:-1.000|">i</token>
+          <token sense_rs="|budgetproposition..1:-1.000|" sense="|budgetproposition..1:-1.000|">budgetpropositionen</token>
+          <token sense_rs="|" sense="|">.</token>
+        </sentence>
+        <sentence>
+          <token sense_rs="|därmed..1:-1.000|" sense="|därmed..1:-1.000|">Därmed</token>
+          <token sense_rs="|avstyrka..1:-1.000|" sense="|avstyrka..1:-1.000|">avstyrker</token>
+          <token sense_rs="|utskott..2:0.998|utskott..1:0.001|utskott..3:0.001|" sense="|utskott..2:0.998|utskott..1:0.001|utskott..3:0.001|">utskottet</token>
+          <token sense_rs="|Sverige..1:-1.000|" sense="|Sverige..1:-1.000|">Sverige</token>
+          <token sense_rs="|demokrat..1:-1.000|" sense="|demokrat..1:-1.000|">demokraternas</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|Centerpartiet..1:-1.000|" sense="|Centerpartiet..1:-1.000|">Centerpartiets</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|liberal..2:-1.000|" sense="|liberal..2:-1.000|">Liberalernas</token>
+          <token sense_rs="|budgetförslag..1:-1.000|" sense="|budgetförslag..1:-1.000|">budgetförslag</token>
+          <token sense_rs="|" sense="|">.</token>
+        </sentence>
+      </p>
+      <p>
+        <sentence>
+          <token sense_rs="|i..2:-1.000|" sense="|i..2:-1.000|">I</token>
+          <token sense_rs="|betänkande..1:-1.000|" sense="|betänkande..1:-1.000|">betänkandet</token>
+          <token sense_rs="|finna..1:0.591|finnas..1:0.348|finna..2:0.061|" sense="|finna..1:0.591|finnas..1:0.348|finna..2:0.061|">finns</token>
+          <token sense_rs="|den..1:-1.000|en..2:-1.000|" sense="|den..1:-1.000|en..2:-1.000|">en</token>
+          <token sense_rs="|reservation..1:-1.000|" sense="|reservation..1:-1.000|">reservation</token>
+          <token sense_rs="|" sense="|">(</token>
+          <token sense_rs="|Sverigedemokraterna..1:-1.000|" sense="|Sverigedemokraterna..1:-1.000|">SD</token>
+          <token sense_rs="|" sense="|">)</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|fyra..1:-1.000|" sense="|fyra..1:-1.000|">fyra</token>
+          <token sense_rs="|särskilja..1:0.589|särskild..1:0.411|" sense="|särskilja..1:0.587|särskild..1:0.413|">särskilda</token>
+          <token sense_rs="|yttrande..1:-1.000|" sense="|yttrande..1:-1.000|">yttranden</token>
+          <token sense_rs="|" sense="|">(</token>
+          <token sense_rs="|s..1:0.719|svavel..1:0.278|sida..2:0.003|" sense="|s..1:0.719|svavel..1:0.278|sida..2:0.003|">S</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|Sverigedemokraterna..1:-1.000|" sense="|Sverigedemokraterna..1:-1.000|">SD</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|" sense="|">C</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|" sense="|">V</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|" sense="|">L</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|" sense="|">MP</token>
+          <token sense_rs="|" sense="|">)</token>
+          <token sense_rs="|" sense="|">.</token>
+        </sentence>
+        <sentence>
+          <token sense_rs="|ledamot..1:-1.000|" sense="|ledamot..1:-1.000|">Ledamöterna</token>
+          <token sense_rs="|från..1:-1.000|" sense="|från..1:-1.000|">från</token>
+          <token sense_rs="|socialdemokrat..1:-1.000|" sense="|socialdemokrat..1:-1.000|">Socialdemokraterna</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|centerparti..1:0.593|Centerpartiet..1:0.407|" sense="|centerparti..1:0.593|Centerpartiet..1:0.407|">Centerpartiet</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|vänster..2:1.000|vänster..3:0.000|vänster..4:0.000|" sense="|vänster..2:1.000|vänster..3:0.000|vänster..4:0.000|">Vänster</token>
+          <token sense_rs="|parti..1:1.000|parti..5:0.000|parti..4:0.000|parti..3:0.000|parti..2:0.000|" sense="|parti..1:1.000|parti..5:0.000|parti..4:0.000|parti..3:0.000|parti..2:0.000|">partiet</token>
+          <token sense_rs="|" sense="|">,</token>
+          <token sense_rs="|liberal..2:-1.000|" sense="|liberal..2:-1.000|">Liberalerna</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|" sense="|">Miljöpartiet</token>
+          <token sense_rs="|avstå..1:0.997|avstå..2:0.003|" sense="|avstå..1:0.997|avstå..2:0.003|">avstår</token>
+          <token sense_rs="|från..1:-1.000|" sense="|från..1:-1.000|">från</token>
+          <token sense_rs="|ställningstagande..1:-1.000|" sense="|ställningstagande..1:-1.000|">ställningstagande</token>
+          <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
+          <token sense_rs="|redovisa..1:-1.000|" sense="|redovisa..1:-1.000|">redovisar</token>
+          <token sense_rs="|i..2:-1.000|i_stället..1:-1.000|" sense="|i..2:-1.000|i_stället..1:-1.000|">i</token>
+          <token sense_rs="|ställ..2:0.499|ställe..1:0.466|ställ..1:0.035|i_stället..1:18:-1.000|" sense="|ställ..2:0.499|ställe..1:0.466|ställ..1:0.035|i_stället..1:18:-1.000|">stället</token>
+          <token sense_rs="|sig..1:-1.000|" sense="|sig..1:-1.000|">sina</token>
+          <token sense_rs="|övervägande..1:0.997|övervägande..3:0.003|" sense="|övervägande..1:0.997|övervägande..3:0.003|">överväganden</token>
+          <token sense_rs="|i..2:-1.000|" sense="|i..2:-1.000|">i</token>
+          <token sense_rs="|särskild..1:0.540|särskilja..1:0.460|" sense="|särskild..1:0.540|särskilja..1:0.460|">särskilda</token>
+          <token sense_rs="|yttrande..1:-1.000|" sense="|yttrande..1:-1.000|">yttranden</token>
+          <token sense_rs="|" sense="|">.</token>
+        </sentence>
+      </p>
+      <p>
+        <sentence>
+          <token sense_rs="|utskott..2:0.984|utskott..3:0.013|utskott..1:0.002|" sense="|utskott..2:0.984|utskott..3:0.013|utskott..1:0.002|">Utskottet</token>
+          <token sense_rs="|föreslå..1:-1.000|" sense="|föreslå..1:-1.000|">föreslår</token>
+          <token sense_rs="|att..1:-1.000|" sense="|att..1:-1.000|">att</token>
+          <token sense_rs="|ärende..2:0.918|ärende..1:0.082|" sense="|ärende..2:0.918|ärende..1:0.082|">ärendet</token>
+          <token sense_rs="|avgöra..1:-1.000|" sense="|avgöra..1:-1.000|">avgörs</token>
+          <token sense_rs="|trots..1:-1.000|" sense="|trots..1:-1.000|">trots</token>
+          <token sense_rs="|att..1:-1.000|" sense="|att..1:-1.000|">att</token>
+          <token sense_rs="|den..2:-1.000|" sense="|den..2:-1.000|">det</token>
+          <token sense_rs="|ha..1:0.980|ha..3:0.020|" sense="|ha..1:0.980|ha..3:0.020|">har</token>
+          <token sense_rs="|vara..1:-1.000|" sense="|vara..1:-1.000|">varit</token>
+          <token sense_rs="|tillgänglig..1:-1.000|" sense="|tillgänglig..1:-1.000|">tillgängligt</token>
+          <token sense_rs="|kort..1:-1.000|" sense="|kort..1:-1.000|">kortare</token>
+          <token sense_rs="|tid..1:-1.000|" sense="|tid..1:-1.000|">tid</token>
+          <token sense_rs="|" sense="|">än</token>
+          <token sense_rs="|två..1:-1.000|" sense="|två..1:-1.000|">två</token>
+          <token sense_rs="|vardag..1:-1.000|" sense="|vardag..1:-1.000|">vardagar</token>
+          <token sense_rs="|före..1:-1.000|" sense="|före..1:-1.000|">före</token>
+          <token sense_rs="|den..1:-1.000|den..2:-1.000|en..2:-1.000|" sense="|den..1:-1.000|den..2:-1.000|en..2:-1.000|">den</token>
+          <token sense_rs="|dag..1:0.882|dag..2:0.118|" sense="|dag..1:0.882|dag..2:0.118|">dag</token>
+          <token sense_rs="|då..1:0.826|då..3:0.174|" sense="|då..1:0.826|då..3:0.174|">då</token>
+          <token sense_rs="|den..2:-1.000|" sense="|den..2:-1.000|">det</token>
+          <token sense_rs="|behandla..1:0.803|behandla..2:0.112|behandla..3:0.086|" sense="|behandla..1:0.803|behandla..2:0.112|behandla..3:0.086|">behandlas</token>
+          <token sense_rs="|" sense="|">.</token>
+        </sentence>
+      </p>
+      <p>
+        <sentence>
+          <token sense_rs="|behandla..1:0.811|behandla..2:0.114|behandla..3:0.075|" sense="|behandla..1:0.811|behandla..2:0.114|behandla..3:0.075|">Behandlade</token>
+          <token sense_rs="|förslag..1:1.000|förslag..2:0.000|" sense="|förslag..1:1.000|förslag..2:0.000|">förslag</token>
+        </sentence>
+      </p>
+    </text>
+  </dokument>
+</file>
