@@ -45,7 +45,7 @@ SENT_SEP = "$SENT$"
         Config(
             "sparv_wsd_rs.prob_format",
             util.constants.SCORESEP + "%.3f",
-            description="Format string for how to print the " "sense probability",
+            description="Format string for how to print the sense probability",
         ),
     ],
 )
