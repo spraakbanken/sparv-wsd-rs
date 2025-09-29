@@ -1,5 +1,9 @@
 """Word sense disambiguation based on SALDO annotation."""
 
+import subprocess
+import typing as t
+from pathlib import Path
+
 from sparv.api import (
     Annotation,
     Binary,
@@ -45,7 +49,7 @@ SENT_SEP = "$SENT$"
         Config(
             "sparv_wsd_rs.prob_format",
             util.constants.SCORESEP + "%.3f",
-            description="Format string for how to print the " "sense probability",
+            description="Format string for how to print the sense probability",
         ),
     ],
 )
@@ -66,9 +70,9 @@ def annotate(
     pos: Annotation = Annotation("<token:pos>"),
     token: Annotation = Annotation("<token>"),
     prob_format: str = Config("sparv_wsd_rs.prob_format"),
-    default_prob: float = Config("sparv_wsd_rs.default_prob"),
+    default_prob: float = Config("sparv_wsd_rs.default_prob"),  # type: ignore [assignment]
     encoding: str = util.constants.UTF8,
-):
+) -> None:
     """Run the word sense disambiguation tool (saldowsd) to add probabilities to the saldo annotation.
 
     Unanalyzed senses (e.g. multiword expressions) receive the probability value given by default_prob.
@@ -92,7 +96,7 @@ def annotate(
     sentences, orphans = sentence.get_children(token)
     sentences.append(orphans)
     # Remove empty sentences
-    sentences = list(s for s in sentences if s)
+    sentences = [s for s in sentences if s]
 
     # Start WSD process
     process = wsd_start(wsdbin, sense_model.path, context_model.path, encoding)
@@ -115,7 +119,7 @@ def annotate(
     # Problem is that regular messages "Reading sense vectors.." are also piped to stderr.
     logger.debug("stdout = %s", stdout)
     logger.debug("stderr = %s", stderr)
-    if len(stderr) > 52:
+    if len(stderr) > 52:  # noqa: PLR2004
         util.system.kill_process(process)
         logger.error(str(stderr))
         return
@@ -123,9 +127,7 @@ def annotate(
     if encoding:
         stdout = stdout.decode(encoding)
 
-    process_output(
-        word, out, stdout, sentences, saldo_annotation, prob_format, default_prob
-    )
+    process_output(word, out, stdout, sentences, saldo_annotation, prob_format, default_prob)
 
     # Kill running subprocess
     util.system.kill_process(process)
@@ -134,13 +136,9 @@ def annotate(
 
 @modelbuilder("WSD models", language=["swe"])
 def build_model(
-    sense_model: ModelOutput = ModelOutput(
-        "sparv_wsd_rs/ALL_512_128_w10_A2_140403_ctx1.bin"
-    ),
-    context_model: ModelOutput = ModelOutput(
-        "sparv_wsd_rs/lem_cbow0_s512_w10_NEW2_ctx.bin"
-    ),
-):
+    sense_model: ModelOutput = ModelOutput("sparv_wsd_rs/ALL_512_128_w10_A2_140403_ctx1.bin"),
+    context_model: ModelOutput = ModelOutput("sparv_wsd_rs/lem_cbow0_s512_w10_NEW2_ctx.bin"),
+) -> None:
     """Download models for SALDO-based word sense disambiguation."""
     # Download sense model
     sense_model.download(
@@ -153,7 +151,9 @@ def build_model(
     )
 
 
-def wsd_start(wsdbin, sense_model, context_model, encoding):
+def wsd_start(
+    wsdbin: Binary, sense_model: Path, context_model: Path, encoding: str
+) -> tuple[str, str] | subprocess.Popen:
     """Start a wsd process and return it."""
     wsd_args = [
         ("-appName", "se.gu.spraakbanken.wsd.VectorWSD"),
@@ -167,20 +167,17 @@ def wsd_start(wsdbin, sense_model, context_model, encoding):
     ]
     arguments = [f"{a[0]}={a[1]}" if isinstance(a, tuple) else a for a in wsd_args]
 
-    process = util.system.call_binary(
-        wsdbin, arguments, encoding=encoding, return_command=True
-    )
-    return process
+    return util.system.call_binary(wsdbin, arguments, encoding=encoding, return_command=True)
 
 
 def build_input(
-    sentences,
-    word_annotation,
-    ref_annotation,
-    lemgram_annotation,
-    saldo_annotation,
-    pos_annotation,
-):
+    sentences: list,
+    word_annotation: list[str],
+    ref_annotation: list[str],
+    lemgram_annotation: list[str],
+    saldo_annotation: list[str],
+    pos_annotation: list[str],
+) -> str:
     """Construct tab-separated input for WSD."""
     rows = []
     for sentence in sentences:
@@ -197,54 +194,44 @@ def build_input(
             if "_" in saldo and len(saldo) > 1:
                 mwe = True
 
-            lemgram, simple_lemgram = make_lemgram(
-                lemgram_annotation[token_index], word, pos
-            )
+            lemgram, simple_lemgram = make_lemgram(lemgram_annotation[token_index], word, pos)
 
             if mwe:
                 lemgram = remove_mwe(lemgram)
                 simple_lemgram = remove_mwe(simple_lemgram)
                 saldo = remove_mwe(saldo)
-            row = "\t".join([ref, word, "_", lemgram, simple_lemgram, saldo])
+            row = f"{ref}\t{word}\t_\t{lemgram}\t{simple_lemgram}\t{saldo}"
             rows.append(row)
         # Append empty row as sentence separator
-        rows.append("\t".join(["_", "_", "_", "_", SENT_SEP, "_"]))
+        rows.append(f"_\t_\t_\t_\t{SENT_SEP}\t_")
     return "\n".join(rows)
 
 
 def process_output(
     word: Annotation,
     out: Output,
-    stdout,
-    in_sentences,
-    saldo_annotation,
-    prob_format,
-    default_prob,
-):
+    stdout: t.Any,
+    in_sentences: list,
+    saldo_annotation: list[str],
+    prob_format: str,
+    default_prob: float,
+) -> None:
     """Parse WSD output and write annotation."""
     out_annotation = word.create_empty_attribute()
 
     # Split output into sentences
     out_sentences = stdout.strip()
-    out_sentences = out_sentences.split(
-        "\t".join(["_", "_", "_", "_", SENT_SEP, "_", "_"])
-    )
+    out_sentences = out_sentences.split(f"_\t_\t_\t_\t{SENT_SEP}\t_\t_")
     out_sentences = [i for i in out_sentences if i]
 
     # Split output into tokens
-    for out_sent, in_sent in zip(out_sentences, in_sentences):
+    for out_sent, in_sent in zip(out_sentences, in_sentences, strict=True):  # noqa: PLR1702
         out_tokens = [t for t in out_sent.split("\n") if t]
-        for out_tok, in_tok in zip(out_tokens, in_sent):
+        for out_tok, in_tok in zip(out_tokens, in_sent, strict=True):
             out_toks = out_tok.split("\t")
             out_prob = [i for i in out_toks[6].split("|") if i != "_"]
             out_meanings = [i for i in out_toks[5].split("|") if i != "_"]
-            saldo = [
-                i
-                for i in saldo_annotation[in_tok]
-                .strip(util.constants.AFFIX)
-                .split(util.constants.DELIM)
-                if i
-            ]
+            saldo = [i for i in saldo_annotation[in_tok].strip(util.constants.AFFIX).split(util.constants.DELIM) if i]
             logger.debug("out_meanings=%s, out_prob = %s", out_meanings, out_prob)
 
             new_saldo = []
@@ -259,7 +246,7 @@ def process_output(
                                 "Failed to convert prob[%d] for '%s': '%s'",
                                 i,
                                 meaning,
-                                str(exc),
+                                exc,
                             )
                             raise
                     else:
@@ -270,23 +257,16 @@ def process_output(
             # Sort by probability
             new_saldo.sort(key=lambda x: (-x[1], x[0]))
             # Format probability according to prob_format
-            new_saldo = [
-                saldo + prob_format % prob if prob_format else saldo
-                for saldo, prob in new_saldo
-            ]
-            out_annotation[in_tok] = util.misc.cwbset(new_saldo)
+            new_saldo = [saldo + prob_format % prob if prob_format else saldo for saldo, prob in new_saldo]
+            out_annotation[in_tok] = util.misc.cwbset(new_saldo)  # type: ignore [arg-type]
 
     out.write(out_annotation)
 
 
-def make_lemgram(lemgram, word, pos):
+def make_lemgram(lemgram: str, word: str, pos: str) -> tuple[str, str]:
     """Construct lemgram and simple_lemgram format."""
-    lemgram = (
-        lemgram.strip(util.constants.AFFIX) if lemgram != util.constants.AFFIX else "_"
-    )
-    simple_lemgram = util.constants.DELIM.join(
-        set((lem[: lem.rfind(".")] for lem in lemgram.split(util.constants.DELIM)))
-    )
+    lemgram = lemgram.strip(util.constants.AFFIX) if lemgram != util.constants.AFFIX else "_"
+    simple_lemgram = util.constants.DELIM.join({lem[: lem.rfind(".")] for lem in lemgram.split(util.constants.DELIM)})
 
     # Fix simple lemgram for tokens without lemgram (word + pos)
     if not simple_lemgram:
@@ -294,11 +274,10 @@ def make_lemgram(lemgram, word, pos):
     return lemgram, simple_lemgram
 
 
-def remove_mwe(annotation):
+def remove_mwe(annotation: str) -> str:
     """For MWEs: strip unnecessary information."""
-    annotation = annotation.split(util.constants.DELIM)
-    annotation = [i for i in annotation if "_" not in i]
-    if annotation:
-        return util.constants.DELIM.join(annotation)
-    else:
-        return "_"
+    annotation_ = annotation.split(util.constants.DELIM)
+    annotation_ = [i for i in annotation_ if "_" not in i]
+    if annotation_:
+        return util.constants.DELIM.join(annotation_)
+    return "_"
