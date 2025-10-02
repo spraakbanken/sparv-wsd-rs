@@ -111,15 +111,11 @@ def annotate(
         pos_annotation,
     )
 
-    if encoding:
-        stdin = stdin.encode(encoding)
+    stdout, stderr = process.communicate(stdin.encode(encoding) if encoding else stdin)
 
-    stdout, stderr = process.communicate(stdin)
-    # TODO: Solve hack line below!
-    # Problem is that regular messages "Reading sense vectors.." are also piped to stderr.
     logger.debug("stdout = %s", stdout)
     logger.debug("stderr = %s", stderr)
-    if len(stderr) > 52:  # noqa: PLR2004
+    if stderr:
         util.system.kill_process(process)
         logger.error(str(stderr))
         return
@@ -151,23 +147,25 @@ def build_model(
     )
 
 
-def wsd_start(
-    wsdbin: Binary, sense_model: Path, context_model: Path, encoding: str
-) -> tuple[str, str] | subprocess.Popen:
+def wsd_start(wsdbin: Binary, sense_model: Path, context_model: Path, encoding: str) -> subprocess.Popen:
     """Start a wsd process and return it."""
     wsd_args = [
-        ("-appName", "se.gu.spraakbanken.wsd.VectorWSD"),
-        ("-format", "tab"),
-        ("-svFile", sense_model),
-        ("-cvFile", context_model),
-        ("-s1Prior", "1"),
-        ("-decay", "true"),
-        ("-contextWidth", "10"),
-        ("-verbose", "false"),
+        "--format",
+        "tab",
+        "vector-wsd",
+        "--sv-file",
+        sense_model,
+        "--cv-file",
+        context_model,
+        "--s1-prior",
+        "1",
+        "--decay",
+        "--context-width",
+        "10",
     ]
-    arguments = [f"{a[0]}={a[1]}" if isinstance(a, tuple) else a for a in wsd_args]
 
-    return util.system.call_binary(wsdbin, arguments, encoding=encoding, return_command=True)
+    wsd_process = util.system.call_binary(wsdbin, wsd_args, encoding=encoding, return_command=True)
+    return t.cast(subprocess.Popen, wsd_process)
 
 
 def build_input(
