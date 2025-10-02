@@ -1,8 +1,8 @@
 # sparv-wsd-rs
 
-Rewrite of Sparv module sparv-wsd to use [wsd-rs](https://github.com/spraakbanken/wsd-rs) instead.
+Rewrite of Sparv module sparv-wsd to use [saldowsd-rs](https://github.com/spraakbanken/saldowsd-rs) instead.
 
-The binary `saldowsd` from `wsd-rs` can be downloaded from <https://github.com/spraakbanken/wsd-rs/releases>.
+The binary `saldowsd` from `saldowsd-rs` can be downloaded from <https://github.com/spraakbanken/saldowsd-rs/releases>.
 
 An example of the output from `Sparv` can be seen [here](./assets/small/bet-2018-2021-1-short_export.gold.xml).
 
