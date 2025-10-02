@@ -76,7 +76,7 @@ def annotate(
     """Run the word sense disambiguation tool (saldowsd) to add probabilities to the saldo annotation.
 
     Unanalyzed senses (e.g. multiword expressions) receive the probability value given by default_prob.
-      - wsdjar is the name of the java programme to be used for the wsd
+      - wsdbin is the name of the rust programme to be used for the wsd
       - sense_model and context_model are the models to be used with wsdjar
       - out is the resulting annotation file
       - sentence is an existing annotation for sentences and their children (words)
