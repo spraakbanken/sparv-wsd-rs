@@ -22,6 +22,40 @@ logger = get_logger(__name__)
 SENT_SEP = "$SENT$"
 
 
+def preloader(wsdbin: Binary, sense_model: Model, context_model: Model, encoding: str) -> dict:
+    """Preload saldowsd executable.
+
+    Args:
+        wsdbin: Path to the saldowsd executable.
+        sense_model: Path to the Sense model.
+        context_model: Path to the Context model.
+        encoding: Encoding to use for the process.
+    """
+    logger.info("Starting saldowsd process")
+    process = wsd_start(wsdbin, sense_model.path, context_model.path, encoding)
+    return {"process": process, "restart": False}
+
+
+def cleanup(wsdbin: Binary, sense_model: Model, context_model: Model, encoding: str, process_dict: dict) -> dict:
+    """Cleanup function used by preloader to restart saldowsd.
+
+    Args:
+        wsdbin: Path to the saldowsd executable.
+        sense_model: Path to the Sense model.
+        context_model: Path to the Context model.
+        encoding: Encoding to use for the process.
+        process_dict: Dictionary containing the process and a restart flag.
+
+    Returns:
+        dict: Dictionary containing the process and a restart flag.
+    """
+    if process_dict["restart"]:
+        util.system.kill_process(process_dict["process"])
+        logger.info("Restarting saldowsd process")
+        process_dict = preloader(wsdbin, sense_model, context_model, encoding)
+    return process_dict
+
+
 @annotator(
     "Word sense disambiguation",
     language=["swe"],
@@ -52,6 +86,10 @@ SENT_SEP = "$SENT$"
             description="Format string for how to print the sense probability",
         ),
     ],
+    preloader=preloader,
+    preloader_params=["wsdbin", "sense_model", "context_model", "encoding"],
+    preloader_target="process_dict",
+    preloader_cleanup=cleanup,
 )
 def annotate(
     wsdbin: Binary = Binary("[sparv_wsd_rs.bin]"),
@@ -72,20 +110,27 @@ def annotate(
     prob_format: str = Config("sparv_wsd_rs.prob_format"),
     default_prob: float = Config("sparv_wsd_rs.default_prob"),  # type: ignore [assignment]
     encoding: str = util.constants.UTF8,
+    process_dict: dict | None = None,
 ) -> None:
     """Run the word sense disambiguation tool (saldowsd) to add probabilities to the saldo annotation.
 
     Unanalyzed senses (e.g. multiword expressions) receive the probability value given by default_prob.
-      - wsdbin is the name of the rust programme to be used for the wsd
-      - sense_model and context_model are the models to be used with wsdjar
-      - out is the resulting annotation file
-      - sentence is an existing annotation for sentences and their children (words)
-      - word is an existing annotations for wordforms
-      - ref is an existing annotation for word references
-      - lemgram and saldo are existing annotations for inflection tables and meanings
-      - pos is an existing annotations for part-of-speech
-      - prob_format is a format string for how to print the sense probability
-      - default_prob is the default value for unanalyzed senses
+
+    Args:
+        wsdbin: the name of the rust programme to be used for the wsd
+        sense_model: the sense model to be used with wsdbin
+        context_model: the context model to be used with wsdbin
+        out: the resulting annotation file
+        sentence: an existing annotation for sentences and their children (words)
+        word: an existing annotations for wordforms
+        ref: an existing annotation for word references
+        lemgram: existing annotations for inflection tables
+        saldo: existing annotations for meanings
+        pos: an existing annotations for part-of-speech
+        prob_format: a format string for how to print the sense probability
+        default_prob: the default value for unanalyzed senses
+        encoding: the encoding to use (default: UTF-8)
+        process_dict: dictionary containing the proces and a restart flag
     """
     word_annotation = list(word.read())
     ref_annotation = list(ref.read())
@@ -99,8 +144,16 @@ def annotate(
     sentences = [s for s in sentences if s]
 
     # Start WSD process
-    process = wsd_start(wsdbin, sense_model.path, context_model.path, encoding)
-
+    if process_dict is None:
+        process = wsd_start(wsdbin, sense_model.path, context_model.path, encoding)
+    else:
+        process = process_dict["process"]
+        # If process seems dead, spawn a new
+        if process.stdin.closed or process.stdout.closed or process.poll():
+            util.system.kill_process(process)
+            logger.info("wsd process seems dead, restarting")
+            process = wsd_start(wsdbin, sense_model.path, context_model.path, encoding)
+            process_dict["process"] = process
     # Construct input and send to WSD
     stdin = build_input(
         sentences,
@@ -111,22 +164,52 @@ def annotate(
         pos_annotation,
     )
 
-    stdout, stderr = process.communicate(stdin.encode(encoding) if encoding else stdin)
-
-    logger.debug("stdout = %s", stdout)
-    logger.debug("stderr = %s", stderr)
-    if stderr:
-        util.system.kill_process(process)
-        logger.error(str(stderr))
-        return
-
     if encoding:
-        stdout = stdout.decode(encoding)
+        stdin = stdin.encode(encoding)
+    # keep_process = len(stdin) < RESTART_THRESHOLD_LENGTH and process_dict is not None
+    keep_process = process_dict is not None
+    logger.info("stdin length: %s, keep process: %s", len(stdin), keep_process)
+
+    if process_dict is not None:
+        process_dict["restart"] = not keep_process
+
+    if keep_process:
+        stdin_fd, stdout_fd, stderr_fd = process.stdin, process.stdout, process.stderr
+        logger.debug("Writing to stdin")
+        stdin_fd.write(stdin)
+        stdin_fd.flush()
+
+        wsd_sentences = []
+        for sent in sentences:
+            for _ in sent:
+                line = stdout_fd.readline()
+                if not line:
+                    logger.error("Failed to read")
+                    break
+                if encoding:
+                    line = line.decode(encoding)
+                wsd_sentences.append(line)
+            line = stdout_fd.readline()
+            assert line == b"\n"
+        stdout = "\n".join(wsd_sentences)
+    else:
+        stdout, stderr = process.communicate(stdin)
+
+        logger.debug("stdout = %s", stdout)
+        logger.debug("stderr = %s", stderr)
+        if stderr:
+            util.system.kill_process(process)
+            logger.error(str(stderr))
+            return
+
+        if encoding:
+            stdout = stdout.decode(encoding)
 
     process_output(word, out, stdout, sentences, saldo_annotation, prob_format, default_prob)
 
     # Kill running subprocess
-    util.system.kill_process(process)
+    if not keep_process:
+        util.system.kill_process(process)
     return
 
 
