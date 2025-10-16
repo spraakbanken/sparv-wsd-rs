@@ -8,7 +8,8 @@ metadata:
 # sbx_metadata:
 #   xml_export: original
 
-# preload:
+preload:
+  - sparv_wsd_rs:annotate
 #   - saldo:annotate
 #   - saldo:compound
 
