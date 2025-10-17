@@ -4,7 +4,7 @@ import subprocess
 import typing as t
 from pathlib import Path
 
-import saldowsd
+import saldowsd  # type: ignore[import-untyped]
 from sparv.api import (
     Annotation,
     Config,
@@ -106,7 +106,7 @@ def annotate(
     )
 
     if encoding:
-        stdin = stdin.encode(encoding)
+        stdin = stdin.encode(encoding)  # type: ignore[assignment]
 
     stdout, stderr = process.communicate(stdin)
     # TODO: Solve hack line below!
@@ -145,7 +145,7 @@ def build_model(
     )
 
 
-def wsd_start(sense_model: Path, context_model: Path, encoding: str) -> tuple[str, str] | subprocess.Popen:
+def wsd_start(sense_model: Path, context_model: Path, encoding: str) -> subprocess.Popen:
     """Start a wsd process and return it."""
     wsd_args = [
         "--format",
@@ -163,7 +163,7 @@ def wsd_start(sense_model: Path, context_model: Path, encoding: str) -> tuple[st
     ]
 
     wsdbin = saldowsd.find_saldowsd_bin()
-    return util.system.call_binary(wsdbin, wsd_args, encoding=encoding, return_command=True)
+    return t.cast(subprocess.Popen, util.system.call_binary(wsdbin, wsd_args, encoding=encoding, return_command=True))
 
 
 def build_input(
