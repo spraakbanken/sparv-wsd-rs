@@ -4,9 +4,9 @@ import subprocess
 import typing as t
 from pathlib import Path
 
+import saldowsd
 from sparv.api import (
     Annotation,
-    Binary,
     Config,
     Model,
     ModelOutput,
@@ -42,11 +42,6 @@ SENT_SEP = "$SENT$"
             description="Default value for unanalyzed senses",
         ),
         Config(
-            "sparv_wsd_rs.bin",
-            default="wsd-rs/saldowsd",
-            description="Path name of the executable file",
-        ),
-        Config(
             "sparv_wsd_rs.prob_format",
             util.constants.SCORESEP + "%.3f",
             description="Format string for how to print the sense probability",
@@ -54,7 +49,6 @@ SENT_SEP = "$SENT$"
     ],
 )
 def annotate(
-    wsdbin: Binary = Binary("[sparv_wsd_rs.bin]"),
     sense_model: Model = Model("[sparv_wsd_rs.sense_model]"),
     context_model: Model = Model("[sparv_wsd_rs.context_model]"),
     out: Output = Output(
@@ -99,7 +93,7 @@ def annotate(
     sentences = [s for s in sentences if s]
 
     # Start WSD process
-    process = wsd_start(wsdbin, sense_model.path, context_model.path, encoding)
+    process = wsd_start(sense_model.path, context_model.path, encoding)
 
     # Construct input and send to WSD
     stdin = build_input(
@@ -151,23 +145,25 @@ def build_model(
     )
 
 
-def wsd_start(
-    wsdbin: Binary, sense_model: Path, context_model: Path, encoding: str
-) -> tuple[str, str] | subprocess.Popen:
+def wsd_start(sense_model: Path, context_model: Path, encoding: str) -> tuple[str, str] | subprocess.Popen:
     """Start a wsd process and return it."""
     wsd_args = [
-        ("-appName", "se.gu.spraakbanken.wsd.VectorWSD"),
-        ("-format", "tab"),
-        ("-svFile", sense_model),
-        ("-cvFile", context_model),
-        ("-s1Prior", "1"),
-        ("-decay", "true"),
-        ("-contextWidth", "10"),
-        ("-verbose", "false"),
+        "--format",
+        "tab",
+        "vector-wsd",
+        "--sv-file",
+        sense_model,
+        "--cv-file",
+        context_model,
+        "--s1-prior",
+        "1",
+        "--decay",
+        "--context-width",
+        "10",
     ]
-    arguments = [f"{a[0]}={a[1]}" if isinstance(a, tuple) else a for a in wsd_args]
 
-    return util.system.call_binary(wsdbin, arguments, encoding=encoding, return_command=True)
+    wsdbin = saldowsd.find_saldowsd_bin()
+    return util.system.call_binary(wsdbin, wsd_args, encoding=encoding, return_command=True)
 
 
 def build_input(
