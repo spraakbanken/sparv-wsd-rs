@@ -1269,6 +1269,7 @@ name = "sparv-wsd-rs"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "setuptools" },
     { name = "sparv" },
 ]
 
@@ -1281,7 +1282,10 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "sparv", specifier = ">=5.3.1" }]
+requires-dist = [
+    { name = "setuptools", specifier = ">=75.6.0" },
+    { name = "sparv", specifier = ">=5.3.1" },
+]
 
 [package.metadata.requires-dev]
 dev = [
