@@ -201,6 +201,8 @@ rpds-py==0.22.3
     #   jsonschema
     #   referencing
 ruff==0.13.2
+saldowsd==0.2.3
+    # via sparv-wsd-rs
 setuptools==75.6.0
     # via
     #   sparv-wsd-rs
