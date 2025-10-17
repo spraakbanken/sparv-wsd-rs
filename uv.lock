@@ -1164,6 +1164,25 @@ wheels = [
 ]
 
 [[package]]
+name = "saldowsd"
+version = "0.2.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b8/8d/59246ff4fb1677048754a97b616670a357d1f88582b5f64c7ef57091f9db/saldowsd-0.2.3.tar.gz", hash = "sha256:6f4170ac3fb4ba08f12d1a1c457988255655305c0e6d1abc7e33e0cf89ecfd6e", size = 37115, upload-time = "2025-10-16T14:00:36.512Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3d/9a/71a26173854501b8b355a165ceb783df0829b73609c1c0afcde21c092d44/saldowsd-0.2.3-py3-none-linux_armv6l.whl", hash = "sha256:17808d468964ea78cb26a0f1cacf91a08b42da7941a31c79b82c6debab701e80", size = 998938, upload-time = "2025-10-16T14:00:18.553Z" },
+    { url = "https://files.pythonhosted.org/packages/09/8a/352d7aeb75c957170ae497a2584e1e839c6b94f09181ea38d894c26c08fe/saldowsd-0.2.3-py3-none-macosx_10_12_x86_64.whl", hash = "sha256:479b27cb60aa6886f2671dbcc6441ea9c920b93e561838ef9d0f6e8e8b18bbde", size = 1054349, upload-time = "2025-10-16T14:00:20.556Z" },
+    { url = "https://files.pythonhosted.org/packages/51/74/d379e79e555400af87bed32ca0936cfccb9ae306a41210de75f80306cdd3/saldowsd-0.2.3-py3-none-macosx_11_0_arm64.whl", hash = "sha256:7a7920f2e2cc5deb9d006d5d71f419419279c1358af934a11958aacac762743e", size = 983932, upload-time = "2025-10-16T14:00:22.198Z" },
+    { url = "https://files.pythonhosted.org/packages/9b/c0/d141cc23d3fb72ecdd2bc9bdd8dff72c9ce7a24330fdf1dbdbf2f41bb1c4/saldowsd-0.2.3-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.musllinux_1_1_aarch64.whl", hash = "sha256:1e391526ce8afc307c3da10083c5b478418d81c658b21ede50248152f25b537a", size = 1016555, upload-time = "2025-10-16T14:00:24.205Z" },
+    { url = "https://files.pythonhosted.org/packages/1e/40/8524e8656f17acf343ec6e3a30502488710bc8bbe8fe14ab2ca948f26bd0/saldowsd-0.2.3-py3-none-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:ccc059ca03b5c4dc5fec4cf5ded80f6100ebc6ef326165347603a9b8b5723a6d", size = 960750, upload-time = "2025-10-16T14:00:25.787Z" },
+    { url = "https://files.pythonhosted.org/packages/23/c5/1623e37ea24fcba62482a373a0aea676b444e80a550f8dd59dd21d465abe/saldowsd-0.2.3-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1d76d599f4baa81d1fbe952267bf1e624e53ac24b5652aaae6993e436a9f7aa4", size = 1091119, upload-time = "2025-10-16T14:00:27.398Z" },
+    { url = "https://files.pythonhosted.org/packages/74/57/546715ad34ff624cd95177df4e95c0768637f6568431399c67551755a499/saldowsd-0.2.3-py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:705784fd9834fbf7d6adb3113e6f55ae37fdad9016d679b9c11b0e02874da133", size = 991868, upload-time = "2025-10-16T14:00:28.542Z" },
+    { url = "https://files.pythonhosted.org/packages/98/30/fff9a7788ee19cff581181f62a1c3a501adca676788dcab12836d408c6e4/saldowsd-0.2.3-py3-none-musllinux_1_1_armv7l.whl", hash = "sha256:43ea0318196d652fb52c11e0c6ce6489ddc13f93f924c891bc6aa256de2615cc", size = 976073, upload-time = "2025-10-16T14:00:30.153Z" },
+    { url = "https://files.pythonhosted.org/packages/16/81/cb23904fed0b3479f0d13f50d312f8bfa35284d727ae24882e5c0b7aa6ab/saldowsd-0.2.3-py3-none-musllinux_1_1_x86_64.whl", hash = "sha256:ffa7dcdadaabdccae9fc6daf0c7b67143a6d0abe8ff22ca0b3ef99795bef7bb6", size = 1134338, upload-time = "2025-10-16T14:00:32.676Z" },
+    { url = "https://files.pythonhosted.org/packages/35/eb/1001465522bec8ab979fee330b77432c932aead26fd760b491d7e76833fd/saldowsd-0.2.3-py3-none-win_amd64.whl", hash = "sha256:38b6674127ce7601de42cc1c2f119a8d160d78f5f444125dfb3e6b84d0e9f5d9", size = 951523, upload-time = "2025-10-16T14:00:34.119Z" },
+    { url = "https://files.pythonhosted.org/packages/9b/bf/c1776055be5dac829d11b31b36551b1eb09d615b2c2455b1edc39b44db9d/saldowsd-0.2.3-py3-none-win_arm64.whl", hash = "sha256:dec7d254e655454e2539044b79d39a08aeff8fb812c82a1cc3ecf6e7b4ebd0f9", size = 880522, upload-time = "2025-10-16T14:00:35.352Z" },
+]
+
+[[package]]
 name = "setuptools"
 version = "75.6.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1269,6 +1288,8 @@ name = "sparv-wsd-rs"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "saldowsd" },
+    { name = "setuptools" },
     { name = "sparv" },
 ]
 
@@ -1281,7 +1302,11 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "sparv", specifier = ">=5.3.1" }]
+requires-dist = [
+    { name = "saldowsd", specifier = ">=0.2.3" },
+    { name = "setuptools", specifier = ">=75.6.0" },
+    { name = "sparv", specifier = ">=5.3.1" },
+]
 
 [package.metadata.requires-dev]
 dev = [

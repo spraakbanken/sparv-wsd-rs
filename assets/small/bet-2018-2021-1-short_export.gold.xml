@@ -130,7 +130,7 @@
           <token sense_rs="|fråga..2:0.910|fråga..3:0.090|i_fråga..1:1:-1.000|i_fråga_om..1:1:-1.000|" sense="|fråga..2:0.910|fråga..3:0.090|i_fråga..1:1:-1.000|i_fråga_om..1:1:-1.000|">fråga</token>
           <token sense_rs="|i_fråga_om..1:1:-1.000|om..1:-1.000|om..5:-1.000|" sense="|i_fråga_om..1:1:-1.000|om..1:-1.000|om..5:-1.000|">om</token>
           <token sense_rs="|övrig..1:-1.000|" sense="|övrig..1:-1.000|">övriga</token>
-          <token sense_rs="|anslag..1:0.992|anslag..3:0.004|anslag..2:0.004|" sense="|anslag..1:0.993|anslag..2:0.004|anslag..3:0.004|">anslag</token>
+          <token sense_rs="|anslag..1:0.993|anslag..2:0.004|anslag..3:0.004|" sense="|anslag..1:0.993|anslag..2:0.004|anslag..3:0.004|">anslag</token>
           <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
           <token sense_rs="|beställning..1:-1.000|" sense="|beställning..1:-1.000|">beställnings</token>
           <token sense_rs="|bemyndigande..1:-1.000|" sense="|bemyndigande..1:-1.000|">bemyndiganden</token>
@@ -139,9 +139,9 @@
           <token sense_rs="|finna..1:0.547|finnas..1:0.447|finna..2:0.006|" sense="|finna..1:0.547|finnas..1:0.447|finna..2:0.006|">finns</token>
           <token sense_rs="|den..2:-1.000|" sense="|den..2:-1.000|">det</token>
           <token sense_rs="|ingen..1:-1.000|" sense="|ingen..1:-1.000|">inga</token>
-          <token sense_rs="|avvikelse..1:0.977|avvikelse..2:0.023|" sense="|avvikelse..1:0.978|avvikelse..2:0.022|">avvikelser</token>
+          <token sense_rs="|avvikelse..1:0.978|avvikelse..2:0.022|" sense="|avvikelse..1:0.978|avvikelse..2:0.022|">avvikelser</token>
           <token sense_rs="|mellan..1:-1.000|" sense="|mellan..1:-1.000|">mellan</token>
-          <token sense_rs="|utskott..2:0.843|utskott..3:0.101|utskott..1:0.056|" sense="|utskott..2:0.835|utskott..3:0.109|utskott..1:0.056|">utskottets</token>
+          <token sense_rs="|utskott..2:0.835|utskott..3:0.109|utskott..1:0.056|" sense="|utskott..2:0.835|utskott..3:0.109|utskott..1:0.056|">utskottets</token>
           <token sense_rs="|förslag..1:1.000|förslag..2:0.000|" sense="|förslag..1:1.000|förslag..2:0.000|">förslag</token>
           <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
           <token sense_rs="|förslag..1:1.000|förslag..2:0.000|" sense="|förslag..1:1.000|förslag..2:0.000|">förslaget</token>
@@ -175,7 +175,7 @@
           <token sense_rs="|" sense="|">)</token>
           <token sense_rs="|och..1:-1.000|" sense="|och..1:-1.000|">och</token>
           <token sense_rs="|fyra..1:-1.000|" sense="|fyra..1:-1.000|">fyra</token>
-          <token sense_rs="|särskilja..1:0.589|särskild..1:0.411|" sense="|särskilja..1:0.587|särskild..1:0.413|">särskilda</token>
+          <token sense_rs="|särskilja..1:0.587|särskild..1:0.413|" sense="|särskilja..1:0.587|särskild..1:0.413|">särskilda</token>
           <token sense_rs="|yttrande..1:-1.000|" sense="|yttrande..1:-1.000|">yttranden</token>
           <token sense_rs="|" sense="|">(</token>
           <token sense_rs="|s..1:0.719|svavel..1:0.278|sida..2:0.003|" sense="|s..1:0.719|svavel..1:0.278|sida..2:0.003|">S</token>
@@ -230,7 +230,7 @@
           <token sense_rs="|trots..1:-1.000|" sense="|trots..1:-1.000|">trots</token>
           <token sense_rs="|att..1:-1.000|" sense="|att..1:-1.000|">att</token>
           <token sense_rs="|den..2:-1.000|" sense="|den..2:-1.000|">det</token>
-          <token sense_rs="|ha..1:0.980|ha..3:0.020|" sense="|ha..1:0.980|ha..3:0.020|">har</token>
+          <token sense_rs="|ha..1:0.982|ha..3:0.018|" sense="|ha..1:0.980|ha..3:0.020|">har</token>
           <token sense_rs="|vara..1:-1.000|" sense="|vara..1:-1.000|">varit</token>
           <token sense_rs="|tillgänglig..1:-1.000|" sense="|tillgänglig..1:-1.000|">tillgängligt</token>
           <token sense_rs="|kort..1:-1.000|" sense="|kort..1:-1.000|">kortare</token>
@@ -240,16 +240,16 @@
           <token sense_rs="|vardag..1:-1.000|" sense="|vardag..1:-1.000|">vardagar</token>
           <token sense_rs="|före..1:-1.000|" sense="|före..1:-1.000|">före</token>
           <token sense_rs="|den..1:-1.000|den..2:-1.000|en..2:-1.000|" sense="|den..1:-1.000|den..2:-1.000|en..2:-1.000|">den</token>
-          <token sense_rs="|dag..1:0.882|dag..2:0.118|" sense="|dag..1:0.882|dag..2:0.118|">dag</token>
-          <token sense_rs="|då..1:0.826|då..3:0.174|" sense="|då..1:0.826|då..3:0.174|">då</token>
+          <token sense_rs="|dag..1:0.870|dag..2:0.130|" sense="|dag..1:0.882|dag..2:0.118|">dag</token>
+          <token sense_rs="|då..1:0.806|då..3:0.194|" sense="|då..1:0.826|då..3:0.174|">då</token>
           <token sense_rs="|den..2:-1.000|" sense="|den..2:-1.000|">det</token>
-          <token sense_rs="|behandla..1:0.803|behandla..2:0.112|behandla..3:0.086|" sense="|behandla..1:0.803|behandla..2:0.112|behandla..3:0.086|">behandlas</token>
+          <token sense_rs="|behandla..1:0.815|behandla..2:0.104|behandla..3:0.081|" sense="|behandla..1:0.803|behandla..2:0.112|behandla..3:0.086|">behandlas</token>
           <token sense_rs="|" sense="|">.</token>
         </sentence>
       </p>
       <p>
         <sentence>
-          <token sense_rs="|behandla..1:0.811|behandla..2:0.114|behandla..3:0.075|" sense="|behandla..1:0.811|behandla..2:0.114|behandla..3:0.075|">Behandlade</token>
+          <token sense_rs="|behandla..1:0.818|behandla..2:0.110|behandla..3:0.072|" sense="|behandla..1:0.811|behandla..2:0.114|behandla..3:0.075|">Behandlade</token>
           <token sense_rs="|förslag..1:1.000|förslag..2:0.000|" sense="|förslag..1:1.000|förslag..2:0.000|">förslag</token>
         </sentence>
       </p>

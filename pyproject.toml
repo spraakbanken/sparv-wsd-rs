@@ -5,10 +5,13 @@ description = "Sparv plugin for using wsd-rs with Sparv."
 readme = "README.md"
 authors = [
     { name = "Språkbanken Text", email = "sb-info@svenska.gu.se" },
-    { name = "Kristoffer Andersson", email = "kristoffer.andersson@gu.se" },
 ]
 requires-python = ">=3.11"
-dependencies = ["sparv>=5.3.1"]
+dependencies = [
+    "saldowsd>=0.2.3",
+    "setuptools>=75.6.0",
+    "sparv>=5.3.1",
+]
 
 [build-system]
 requires = ["hatchling"]

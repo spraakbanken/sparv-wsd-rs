@@ -166,3 +166,13 @@ snapshot-update:
 	${INVENV} pytest --snapshot-update
 
 ### === project targets below this line ===
+test-example-small:
+	rm -rf examples/small/export/ examples/small/.snakemake examples/small/sparv-workdir
+	cd examples/small; ${INVENV} sparv run --stats
+	uv run python scripts/compare-annotations.py examples/small/export/xml_export.pretty/bet-2018-2021-1-short_export.xml 20
+
+update-example-small-snapshot: assets/small/bet-2018-2021-1-short_export.gold.xml
+
+assets/small/bet-2018-2021-1-short_export.gold.xml: \
+	examples/small/export/xml_export.pretty/bet-2018-2021-1-short_export.xml
+	@cp $< $@
