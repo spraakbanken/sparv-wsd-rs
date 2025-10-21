@@ -23,6 +23,16 @@ running both annotations on `vivill` on our server `wombat`.
   sparv_wsd_rs:annotate                                             0:09:57         1.1%
 ```
 
+## Memory usage
+
+Loading models and running a simple example (not using Sparv for this). Rust version uses 35% less memory.
+Measured with [`heaptrack`](https://github.com/KDE/heaptrack).
+
+| Tool                  | Top-RSS |
+| --------------------- | ------: |
+| `saldowsd` (Rust)     |  914 Mb |
+| `saldowsd.jar` (Java) |  1.4 Gb |
+
 The binary `saldowsd` from `saldowsd-rs` can be downloaded from <https://github.com/spraakbanken/saldowsd-rs/releases>.
 
 An example of the output from `Sparv` can be seen [here](./assets/small/bet-2018-2021-1-short_export.gold.xml).
