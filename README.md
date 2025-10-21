@@ -2,6 +2,8 @@
 
 Rewrite of Sparv module sparv-wsd to use [saldowsd-rs](https://github.com/spraakbanken/saldowsd-rs) instead.
 
+Uses [`saldowsd` from PyPI](https://pypi.org/project/saldowsd) to automatically install the `saldowsd` binary.
+
 ## Faster than using `saldowsd.jar`
 
 The running time for `sparv_wsd_rs` that uses `saldowsd-rs` is 12.8% faster than using Java version. See results from
@@ -37,7 +39,9 @@ The binary `saldowsd` from `saldowsd-rs` can be downloaded from <https://github.
 
 An example of the output from `Sparv` can be seen [here](./assets/small/bet-2018-2021-1-short_export.gold.xml).
 
-The following annotations differ:
+The annotations are probalistic, so they always differ a bit (wsd.sense differs with itself for different runs).
+
+Example of differences:
 
 - anslag: `|anslag..1:0.993|anslag..2:0.004|anslag..3:0.004|` != `|anslag..1:0.992|anslag..3:0.004|anslag..2:0.004|`
 - avvikelse: `|avvikelse..1:0.978|avvikelse..2:0.022|` != `|avvikelse..1:0.977|avvikelse..2:0.023|`
