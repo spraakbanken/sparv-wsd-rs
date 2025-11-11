@@ -6,7 +6,7 @@ Uses [`saldowsd` from PyPI](https://pypi.org/project/saldowsd) to automatically 
 
 ## Faster than using `saldowsd.jar`
 
-The running time for `sparv_wsd_rs` that uses `saldowsd-rs` is 12.8% faster than using Java version. See results from
+The running time for `sbx_wsd_rs` that uses `saldowsd-rs` is 12.8% faster than using Java version. See results from
 running both annotations on `vivill` on our server `wombat`.
 
 ```bash
@@ -22,7 +22,7 @@ running both annotations on `vivill` on our server `wombat`.
   hunpos:msdtag                                                     0:31:50         3.5%
   saldo:annotate                                                    0:26:25         2.9%
   wsd:annotate                                                      0:11:25         1.3%
-  sparv_wsd_rs:annotate                                             0:09:57         1.1%
+  sbx_wsd_rs:annotate                                             0:09:57         1.1%
 ```
 
 ## Memory usage

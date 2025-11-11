@@ -27,32 +27,32 @@ SENT_SEP = "$SENT$"
     language=["swe"],
     config=[
         Config(
-            "sparv_wsd_rs.sense_model",
-            default="sparv_wsd_rs/ALL_512_128_w10_A2_140403_ctx1.bin",
+            "sbx_wsd_rs.sense_model",
+            default="sbx_wsd_rs/ALL_512_128_w10_A2_140403_ctx1.bin",
             description="Path to sense model",
         ),
         Config(
-            "sparv_wsd_rs.context_model",
-            default="sparv_wsd_rs/lem_cbow0_s512_w10_NEW2_ctx.bin",
+            "sbx_wsd_rs.context_model",
+            default="sbx_wsd_rs/lem_cbow0_s512_w10_NEW2_ctx.bin",
             description="Path to context model",
         ),
         Config(
-            "sparv_wsd_rs.default_prob",
+            "sbx_wsd_rs.default_prob",
             -1.0,
             description="Default value for unanalyzed senses",
         ),
         Config(
-            "sparv_wsd_rs.prob_format",
+            "sbx_wsd_rs.prob_format",
             util.constants.SCORESEP + "%.3f",
             description="Format string for how to print the sense probability",
         ),
     ],
 )
 def annotate(
-    sense_model: Model = Model("[sparv_wsd_rs.sense_model]"),
-    context_model: Model = Model("[sparv_wsd_rs.context_model]"),
+    sense_model: Model = Model("[sbx_wsd_rs.sense_model]"),
+    context_model: Model = Model("[sbx_wsd_rs.context_model]"),
     out: Output = Output(
-        "<token>:sparv_wsd_rs.sense_rs",
+        "<token>:sbx_wsd_rs.sense_rs",
         cls="token:sense",
         description="Sense disambiguated SALDO identifiers",
     ),
@@ -63,8 +63,8 @@ def annotate(
     saldo: Annotation = Annotation("<token>:saldo.sense"),
     pos: Annotation = Annotation("<token:pos>"),
     token: Annotation = Annotation("<token>"),
-    prob_format: str = Config("sparv_wsd_rs.prob_format"),
-    default_prob: float = Config("sparv_wsd_rs.default_prob"),  # type: ignore [assignment]
+    prob_format: str = Config("sbx_wsd_rs.prob_format"),
+    default_prob: float = Config("sbx_wsd_rs.default_prob"),  # type: ignore [assignment]
     encoding: str = util.constants.UTF8,
 ) -> None:
     """Run the word sense disambiguation tool (saldowsd) to add probabilities to the saldo annotation.
@@ -130,8 +130,8 @@ def annotate(
 
 @modelbuilder("WSD models", language=["swe"])
 def build_model(
-    sense_model: ModelOutput = ModelOutput("sparv_wsd_rs/ALL_512_128_w10_A2_140403_ctx1.bin"),
-    context_model: ModelOutput = ModelOutput("sparv_wsd_rs/lem_cbow0_s512_w10_NEW2_ctx.bin"),
+    sense_model: ModelOutput = ModelOutput("sbx_wsd_rs/ALL_512_128_w10_A2_140403_ctx1.bin"),
+    context_model: ModelOutput = ModelOutput("sbx_wsd_rs/lem_cbow0_s512_w10_NEW2_ctx.bin"),
 ) -> None:
     """Download models for SALDO-based word sense disambiguation."""
     # Download sense model

@@ -99,7 +99,7 @@ jobs:
           name: pypi_files
           path: dist
 
-      - run: rm -r src/sparv_wsd_rs
+      - run: rm -r src/sbx_wsd_rs
       - run: pip install typing-extensions
       - run: pip install -r tests/requirements-testing.lock
       - run: pip install sparv-wsd-rs --no-index --no-deps --find-links dist --force-reinstall
