@@ -52,7 +52,7 @@ def annotate(
     sense_model: Model = Model("[sbx_wsd_rs.sense_model]"),
     context_model: Model = Model("[sbx_wsd_rs.context_model]"),
     out: Output = Output(
-        "<token>:sbx_wsd_rs.sense_rs",
+        "<token>:sbx_wsd_rs.sense",
         cls="token:sense",
         description="Sense disambiguated SALDO identifiers",
     ),
