@@ -54,7 +54,7 @@ export:
     - <text>
     - <token>
     - <token>:wsd.sense
-    - <token>:sparv_wsd_rs.sense_rs
+    - <token>:sbx_wsd_rs.sense
   source_annotations:
     - text:datum as date
     - text:datumtid as date

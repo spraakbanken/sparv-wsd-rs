@@ -58,7 +58,7 @@ help:
 
 PLATFORM := `uname -o`
 REPO := sparv-wsd-rs
-PROJECT_SRC := src/sparv_wsd_rs
+PROJECT_SRC := src/sbx_wsd_rs
 
 ifeq (${VIRTUAL_ENV},)
   VENV_NAME = .venv
