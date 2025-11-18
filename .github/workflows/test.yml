@@ -172,7 +172,14 @@ jobs:
           mkdir -pv ~/.local/share/sparv/bin
           cp -v hunpos-1.0-linux/hunpos-tag ~/.local/share/sparv/bin
 
-      - name: check formatting
+      - name: install saldowsd
+        if: steps.cache-sparv.outputs.cache-hit != 'true'
+        run: |
+          curl --output saldowsd.jar https://github.com/spraakbanken/sparv-wsd/raw/refs/heads/master/bin/saldowsd.jar
+          mkdir -pv ~/.local/share/sparv/bin/wsd
+          cp -v saldowsd.jar ~/.local/share/sparv/bin/wsd
+
+      - name: run example ${{ matrix.example }}
         run: make test-example-${{ matrix.example }}
 
   # https://github.com/marketplace/actions/alls-green#why used for branch protection checks
