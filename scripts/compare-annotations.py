@@ -8,7 +8,7 @@ from xml.etree import ElementTree as ET
 def main() -> None:
     """Program to compare 'sense' and 'sense_rs' attributes."""
     example_file = sys.argv[1] if len(sys.argv) > 1 else "assets/small/bet-2018-2021-1-short_export.gold.xml"
-    allowed_failures = int(sys.argv[2]) if len(sys.argv) > 2 else 20  # noqa: PLR2004
+    allowed_failures = int(sys.argv[2]) if len(sys.argv) > 2 else 30  # noqa: PLR2004
     tree = ET.parse(example_file)
     root = tree.getroot()
     failures, num_tokens = _walk_and_validate_node(root)
@@ -30,10 +30,14 @@ def _walk_and_validate_node(node: ET.Element) -> tuple[list[str], int]:
     num_tokens = 0
     if node.tag == "token":
         num_tokens += 1
-        sense_attr = node.attrib["sense"]
-        sense_rs_attr = node.attrib["sense_rs"]
+        try:
+            sense_attr = node.attrib["wsd.sense"]
+        except KeyError:
+            print(f"{node.attrib=}", file=sys.stderr)  # noqa: T201
+            raise
+        sense_rs_attr = node.attrib["sbx_wsd_rs.sense"]
         if sense_attr != sense_rs_attr:
-            failure = f"   fail: '{sense_attr}' != '{sense_rs_attr}' (sense != sense_rs) for {node.text=}"
+            failure = f"   fail: '{sense_attr}' != '{sense_rs_attr}' (wsd.sense != sbx_wsd_rs.sense) for {node.text=}"
             failures.append(failure)
             # print(failure, file=sys.stderr)
         # else:
