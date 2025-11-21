@@ -175,9 +175,8 @@ jobs:
       - name: install saldowsd
         if: steps.cache-sparv.outputs.cache-hit != 'true'
         run: |
-          curl --output saldowsd.jar https://github.com/spraakbanken/sparv-wsd/raw/refs/heads/master/bin/saldowsd.jar
           mkdir -pv ~/.local/share/sparv/bin/wsd
-          cp -v saldowsd.jar ~/.local/share/sparv/bin/wsd
+          cp -v assets/ci/saldowsd.jar ~/.local/share/sparv/bin/wsd
 
       - name: run example ${{ matrix.example }}
         run: make test-example-${{ matrix.example }}
