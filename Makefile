@@ -57,7 +57,7 @@ help:
 	@echo ""
 
 PLATFORM := `uname -o`
-REPO := sparv-wsd-rs
+REPO := sparv-sbx-wsd-rs
 PROJECT_SRC := src/sbx_wsd_rs
 
 ifeq (${VIRTUAL_ENV},)

@@ -1,5 +1,5 @@
 [project]
-name = "sparv-wsd-rs"
+name = "sparv-sbx-wsd-rs"
 version = "0.1.0"
 description = "Sparv plugin for using wsd-rs with Sparv."
 readme = "README.md"

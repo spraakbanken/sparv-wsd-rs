@@ -202,10 +202,10 @@ rpds-py==0.22.3
     #   referencing
 ruff==0.13.2
 saldowsd==0.2.3
-    # via sparv-wsd-rs
+    # via sparv-sbx-wsd-rs
 setuptools==75.6.0
     # via
-    #   sparv-wsd-rs
+    #   sparv-sbx-wsd-rs
     #   torch
 six==1.17.0
     # via python-dateutil
@@ -216,7 +216,7 @@ smmap==5.0.1
 snakemake==7.32.3
     # via sparv
 sparv==5.3.1
-    # via sparv-wsd-rs
+    # via sparv-sbx-wsd-rs
 stanza==1.10.1
     # via sparv
 stopit==1.1.2

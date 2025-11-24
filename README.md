@@ -1,4 +1,4 @@
-# sparv-wsd-rs
+# sparv-sbx-wsd-rs
 
 Rewrite of Sparv module sparv-wsd to use [saldowsd-rs](https://github.com/spraakbanken/saldowsd-rs) instead.
 
