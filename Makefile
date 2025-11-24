@@ -174,7 +174,7 @@ snapshot-update:
 test-example-small:
 	rm -rf examples/small/export/ examples/small/.snakemake examples/small/sparv-workdir
 	cd examples/small; ${INVENV} sparv run --stats
-	uv run python scripts/compare-annotations.py examples/small/export/xml_export.pretty/bet-2018-2021-1-short_export.xml 20
+	uv run python scripts/compare-annotations.py examples/small/export/xml_export.pretty/bet-2018-2021-1-short_export.xml 25
 
 update-example-small-snapshot: assets/small/bet-2018-2021-1-short_export.gold.xml
 
