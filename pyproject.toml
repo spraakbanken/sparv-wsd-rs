@@ -12,6 +12,31 @@ dependencies = [
     "setuptools>=75.6.0",
     "sparv>=5.3.1",
 ]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    # "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Unix",
+    "Operating System :: POSIX",
+    # "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    # "Programming Language :: Python :: 3.14",  # See here: https://github.com/spraakbanken/sparv-sbx-wsd-rs/issues/25
+    "Programming Language :: Python :: Implementation :: CPython",
+    # "uncomment if you test on these interpreters:",
+    # "Programming Language :: Python :: Implementation :: IronPython",
+    # "Programming Language :: Python :: Implementation :: Jython",
+    # "Programming Language :: Python :: Implementation :: Stackless",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://spraakbanken.gu.se"
+Repository = "https://github.com/spraakbanken/sparv-sbx-wsd-rs"
+Issues = "https://github.com/spraakbanken/sparv-sbx-wsd-rs/issues"
+Changelog = "https://github.com/spraakbanken/sparv-sbx-wsd-rs/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = ["uv_build>=0.9.6,<0.10.0"]
