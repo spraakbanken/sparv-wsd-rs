@@ -82,8 +82,13 @@ info:
 dev: install-dev
 
 # setup development environment
-install-dev:
+install-dev: install-pre-commit
 	uv sync --all-packages --dev
+
+# install pre-commit hooks
+install-pre-commit: .git/hooks/pre-commit
+.git/hooks/pre-commit: .pre-commit-config.yaml
+	@if command -v pre-commit > /dev/null; then pre-commit install; else echo "WARN: 'pre-commit' not installed"; fi
 
 # setup production environment
 install:
@@ -169,7 +174,7 @@ snapshot-update:
 test-example-small:
 	rm -rf examples/small/export/ examples/small/.snakemake examples/small/sparv-workdir
 	cd examples/small; ${INVENV} sparv run --stats
-	uv run python scripts/compare-annotations.py examples/small/export/xml_export.pretty/bet-2018-2021-1-short_export.xml 20
+	uv run python scripts/compare-annotations.py examples/small/export/xml_export.pretty/bet-2018-2021-1-short_export.xml 25
 
 update-example-small-snapshot: assets/small/bet-2018-2021-1-short_export.gold.xml
 
