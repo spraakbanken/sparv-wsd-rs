@@ -1,0 +1,8 @@
+metadata:
+  id: metadata-generation
+  language: swe
+
+export:
+  annotations:
+    - text
+    - <token>

@@ -56,3 +56,9 @@ dev = [
     "pytest-cov>=7.0.0",
     "ruff>=0.13.2",
 ]
+metadata = [
+    "sparv-sbx-metadata",
+]
+
+[tool.uv.sources]
+sparv-sbx-metadata = { git = "https://github.com/spraakbanken/sparv-sbx-metadata", tag = "v2.3.1" }
